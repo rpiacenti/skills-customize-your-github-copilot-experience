@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Painel interativo com estatisticas e graficos do arquivo CSV."
+    />
+    <title>Painel de Análise de Dados</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <script src="dashboard.js" defer></script>
+  </head>
+  <body>
+    <main class="dashboard">
+      <header class="page-header">
+        <p class="eyebrow">Projeto de análise de dados</p>
+        <h1>Painel do dataset</h1>
+        <p class="intro">
+          Explore as primeiras linhas e compare as estatísticas das colunas
+          numéricas em gráficos de barras.
+        </p>
+      </header>
+
+      <section class="summary-cards" aria-label="Resumo do dataset">
+        <article class="summary-card">
+          <span class="summary-label">Linhas</span>
+          <strong id="row-count">—</strong>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Colunas</span>
+          <strong id="column-count">—</strong>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Colunas numéricas</span>
+          <strong id="numeric-count">—</strong>
+        </article>
+      </section>
+
+      <p id="status" class="status" role="status">Carregando data.csv…</p>
+
+      <section class="panel" aria-labelledby="charts-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Visualização</p>
+            <h2 id="charts-heading">Estatísticas por coluna</h2>
+          </div>
+        </div>
+        <div id="charts" class="charts-grid"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="preview-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Prévia</p>
+            <h2 id="preview-heading">Primeiras cinco linhas</h2>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
